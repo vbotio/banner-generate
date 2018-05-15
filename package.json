@@ -22,5 +22,8 @@
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {
+    "dom-to-image": "^2.6.0"
   }
 }

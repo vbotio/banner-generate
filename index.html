@@ -5,64 +5,66 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="node_modules/angular/angular.min.js"></script>
 	<script src="js/controllers.js"></script>
-	<script src="https://cdn.bootcss.com/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+	<script src="node_modules/dom-to-image/dist/dom-to-image.min.js"></script>
 	<script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
 	<title>Document</title>
 </head>
 <body ng-app="app">
-	<form>
-		<select name="" id="">
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-		</select>
-		<br>
-		<input type="text" ng-model="title" placeholder="titulo">
-		
-		<input type="text" ng-model="percentoff" placeholder="quantos % off ?">
-		<input type="text" ng-model="logo" placeholder="url do logo">
-		<input type="text" ng-model="produto1" placeholder="url do produto 1">
-		<input type="text" ng-model="produto2" placeholder="url do produto 2">
-		<input type="text" ng-model="footer" placeholder="texto do rodapé">
-		<ul>
-			<li><input type="checkbox" ng-model="valid"> valido para são paulo ?</li>
-			<li><input type="checkbox" ng-model="exclusive"> exclusivo no ecommerce?</li>
-		</ul>
-		
-		
-		<div class="container-btn">
-	        <div class="wrap-btn">
-	          	<div class="bgbtn"></div>
-            	<button class="btn" type="submit">
-              		<span>
-                		Gerar Banner
-              		</span>
-            	</button>
-      		</div>
-  		</div>
-  	</form>
-  
-  	<main ng-controller="mainCtrl">
-    	<div class="wrapper">
-      		<article style="background: -webkit-linear-gradient(top, #{{ primary }} 0%, #{{ second }} 100%);">
-		        <p>{{ title }}</p>
-		        <img class="logo" src="{{ logo }}" alt="">
-		        <aside class="exclusive" ng-if="exclusive"></aside>
-		        <aside class="off" ng-if="percentoff">
-		          {{ percentoff }}
-		        </aside>
-		        <div class="produtos">
-		        	<img src="{{ produto1 }}" alt="">
-		        	<img src="{{ produto2 }}" alt="">  
-		        </div>
-		        <aside class="valid" ng-if="valid"></aside>
-		        <footer>
-		          {{footer}}
-		        </footer>
-      		</article>
-    	</div>  
-  	</main>
+	<div class="main" ng-controller="mainCtrl">
+		<form>
+			<select name="" id="">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<br>
+			<input type="text" ng-model="title" placeholder="titulo">
+			
+			<input type="text" ng-model="percentoff" placeholder="quantos % off ?">
+			<input type="text" ng-model="logo" placeholder="url do logo">
+			<input type="text" ng-model="produto1" placeholder="url do produto 1">
+			<input type="text" ng-model="produto2" placeholder="url do produto 2">
+			<input type="text" ng-model="footer" placeholder="texto do rodapé">
+			<ul>
+				<li><input type="checkbox" ng-model="valid"> valido para são paulo ?</li>
+				<li><input type="checkbox" ng-model="exclusive"> exclusivo no ecommerce?</li>
+			</ul>
+			
+			
+			<div class="container-btn">
+		        <div class="wrap-btn">
+		          	<div class="bgbtn"></div>
+	            	<button class="btn" id="generate" type="button" ng-click="generateBanner()">
+	              		<span>
+	                		Gerar Banner
+	              		</span>
+	            	</button>
+	      		</div>
+	  		</div>
+	  	</form>
+		  
+	  	<main>
+	    	<div class="wrapper">
+	      		<article id="wrapper">
+			        <p>{{ title }}</p>
+			        <img class="logo" src="{{ logo }}" alt="">
+			        <aside class="exclusive" ng-if="exclusive"></aside>
+			        <aside class="off" ng-if="percentoff">
+			          {{ percentoff }}
+			        </aside>
+			        <div class="produtos">
+			        	<img src="{{ produto1 }}" alt="">
+			        	<img src="{{ produto2 }}" alt="">  
+			        </div>
+			        <aside class="valid" ng-if="valid"></aside>
+			        <footer>
+			          {{footer}}
+			        </footer>
+	      		</article>
+	    	</div>  
+	  	</main>
+	</div>
 </body>
 </html>
