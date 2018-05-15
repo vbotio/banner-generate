@@ -20,6 +20,7 @@
     "angular": "^1.6.9",
     "browser-sync": "^2.24.4",
     "gulp": "^3.9.1",
-    "gulp-browserify": "^0.5.1"
+    "gulp-browserify": "^0.5.1",
+    "gulp-sass": "^4.0.1"
   }
 }

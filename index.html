@@ -2,10 +2,39 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="node_modules/angular/angular.min.js">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="js/controllers.js"></script>
 	<title>Document</title>
 </head>
-<body>
-	a
+<body ng-app="app">
+	<form action="">
+		<input type="text" ng-model="title" placeholder="titulo"> <br>
+		<input type="checkbox" ng-model="exclusive"> exclusivo no ecommerce? <br>
+		<input type="text" ng-model="percentoff" placeholder="quantos % off ?"> <br>
+		<input type="checkbox" ng-model="valid"> valido para são paulo ? <br>
+		<input type="text" ng-model="footer" placeholder="texto do rodapé">
+  	</form>
+  
+  	<main ng-controller="mainCtrl">
+    	<div class="wrapper">
+      		<article>
+		        <p>{{ title }}</p>
+		        <img class="logo" src="https://picsum.photos/100/100" alt="">
+		        <aside class="exclusive" ng-if="exclusive">
+		          Exclusivo <br> no E-commerce
+		        </aside>
+		        <aside class="off" ng-if="percentoff">
+		          {{ percentoff }}
+		        </aside>
+		        <aside class="valid" ng-if="valid">
+		          Válido para São Paulo
+		        </aside>
+		        <footer>
+		          {{footer}}
+		        </footer>
+      		</article>
+    	</div>  
+  	</main>
 </body>
 </html>
