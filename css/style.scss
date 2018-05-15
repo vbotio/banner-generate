@@ -1,18 +1,94 @@
 * {
   padding:0;
   margin:0;
+  border: 0;
+  box-sizing: border-box;
 }
-
+html, body {
+  width:100%;
+  height:100%;
+}
+body {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(45deg, #00dbde, #fc00ff);
+}
 form {
-  margin-bottom:15px;
-  padding-left:15px;
-  input[type=text] {
-    height:35px;
-    padding: 3px;
-    margin:15px 0;
+  width: 450px;
+  height: 400px;
+  max-width: 50%;
+  background: white;
+  border-radius:5px;
+  margin-right: 20px;
+  padding: 15px;
+  font-family: verdana;
+  display: flex;
+  flex-wrap:wrap;
+  ul {
+    list-style: none;
   }
-}
+  input[type=text], select {
+    width: 100%;
+    height: 30px;
+    border:0;
+    border-bottom:1px solid gray;
+    padding:0 5px;
+  }
+  .container-btn {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding-top:13px;
+    width: 100%;
+    .wrap-btn {
+      width:100%;
+      display: block;
+      position: relative;
+      z-index:1;
+      border-radius:25px;
+      overflow:hidden;
+      margin:0 auto;
+      .bgbtn {
+        position:absolute;
+        z-index:-1;
+        width:300%;
+        height:100%;
+        background:-webkit-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+        top:0;
+        left:-100%;
+        transition:all 0.4s;
+      }
+      .btn {
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        padding:0 20px;
+        width:100%;
+        height:100%;
+        font-size:16px;
+        color:white;
+        line-height:1.2;
+        background:none;
+        border:0;
+        outline:none;
+      }
+      .btn:hover {
+        cursor:pointer;
+      }
+    }
+    .wrap-btn:hover .bgbtn {
+      left:0;
+    }
+  }
+  
+  
 
+  
+
+  
+  
+}
 
 .wrapper  {
   width:550px;
@@ -25,7 +101,7 @@ form {
   article {
     width:100%;
     height:100%;
-    background:pink;
+    background: pink;
     p {
       position: absolute;
       left:35px;
@@ -42,10 +118,9 @@ form {
       position: absolute;
       right:0;
       top:45px;
-      border:1px solid black;
-      background:white;
-      padding:15px;
-      text-align:center;
+      width: 120px;
+      height: 45px;
+      background: url('../images/exclusivo_ecmm.png') no-repeat;
     }
     .off {
       width:150px;
@@ -55,18 +130,19 @@ form {
       position:absolute;
       top:150px;
       left:35px;
-      font-size:32px;
+      font-size:40px;
       text-align:center;
       display: flex;
       justify-content:center;
       align-items:center;
     }
     .valid {
-      border:1px solid red;
       float:left;
       position:absolute;
-      bottom:45px;
-      left:35;
+      bottom:0;
+      width: 119px;
+      height: 109px;
+      background: url('../images/sp.png') no-repeat;
     }
     footer {
       position: absolute;
