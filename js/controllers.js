@@ -1,6 +1,7 @@
 var app = angular.module("app", []);
 
 app.controller('mainCtrl', function($scope){
+	$scope.bg = 1;
 	$scope.generateBanner = generateBanner;
 	function generateBanner() {
 		domtoimage.toBlob(document.getElementById('wrapper'))

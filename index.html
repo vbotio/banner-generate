@@ -12,8 +12,8 @@
 <body ng-app="app">
 	<div class="main" ng-controller="mainCtrl">
 		<form>
-			<select name="" id="">
-				<option value="1">1</option>
+			<select name="" ng-model="bg">
+				<option value="1" ng-selected="selected">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
 				<option value="4">4</option>
@@ -47,12 +47,12 @@
 		  
 	  	<main>
 	    	<div class="wrapper">
-	      		<article id="wrapper">
+	      		<article id="wrapper" style="background:url('images/{{bg}}.jpg'); background-size:cover;">
 			        <p>{{ title }}</p>
 			        <img class="logo" src="{{ logo }}" alt="">
 			        <aside class="exclusive" ng-if="exclusive"></aside>
 			        <aside class="off" ng-if="percentoff">
-			          {{ percentoff }}
+			          {{ percentoff }}% OFF
 			        </aside>
 			        <div class="produtos">
 			        	<img src="{{ produto1 }}" alt="">
